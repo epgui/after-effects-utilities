@@ -65,7 +65,8 @@ if (numKeys > 1) {
       if (dt > (2*period/qFactor)) {
         value
       } else {
-        // Now for the physics.
+        // Now for the physics. For more detailed information see:
+        // http://people.physics.tamu.edu/agnolet/Teaching/Phys_221/MathematicaWebPages/4_DampedHarmonicOscillator.pdf
         //
         // The total energy [E_tot] of a harmonic oscillator is the sum of the
         // kinetic energy [E_k] and the spring potential energy [U]:
