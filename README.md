@@ -20,6 +20,6 @@ Result with `animationSpeed = 1.2` and `springDamping = 0.3`:
 
 ![Low damping](screenshots/spring-easing/low-damping.png "Low damping")
 
-Result with `animationSpeed = 1.2` and `springDamping = 0.3`:
+Result with `animationSpeed = 0.5` and `springDamping = 0.3`:
 
 ![Low damping low speed](screenshots/spring-easing/low-damping-low-speed.png "Low damping low speed")
