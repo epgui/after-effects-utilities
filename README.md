@@ -2,6 +2,8 @@
 For the moment, this repository only has one useful expression: spring-easing.
 
 ## spring-easing
+Other implementations of spring dynamics I have found are incredibly inefficient, bringing my new macbook pro down to its knees. This implements the analytic solution to the energy equations of damped harmonic oscillators, solved for position over time instead of requiring computationally inefficient recursion.
+
 Simply copy-paste the entire expression wherever a property needs to be springy. Leave keyframe interpolation as "linear".
 
 Example: applying the expression to position keyframes
