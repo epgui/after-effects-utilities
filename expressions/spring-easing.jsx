@@ -73,9 +73,10 @@ if (numKeys > 1) {
         //   E_tot = E_k + U
         //
         // Our system is initially at rest because the value of the spring
-        // attractor is the same as the value of the property we wish to animate.
-        // When the value of the attractor is keyframed, the total energy of the
-        // system becomes proportional to the total amplitude of value change.
+        // attractor is the same as the value of the property we wish to
+        // animate. When the value of the attractor is keyframed, the total
+        // energy of the system becomes proportional to the total amplitude of
+        // value change.
         amplitude = value1 - value2
 
         // The kinetic energy component is given by:
@@ -87,28 +88,31 @@ if (numKeys > 1) {
         // where [k] is the spring constant and [x] is the distance from
         // equilibrium, or the "amount of stretching".
         //
-        // Because our system begins at rest, the initial kinetic energy component
-        // is 0 at the very instant the attractor value is changed. Thus we have
-        // for initial conditions:
+        // Because our system begins at rest, the initial kinetic energy
+        // component is 0 at the very instant the attractor value is changed.
+        // Thus we have for initial conditions:
         //   E_tot = U
-        // and as the spring force acts upon the object, its velocity increases so
-        // that:
+        // and as the spring force acts upon the object, its velocity increases
+        // so that:
         //   -d/dt U = d/dt E_k
-        // we can solve this for position over time in an undamped harmonic system
-        forceComponent = amplitude * Math.cos((frequency * dtCorrected) - phaseOffset)
+        // we can solve this for position over time in an undamped harmonic
+        // system
+        forceComponent = amplitude *
+          Math.cos((frequency * dtCorrected) - phaseOffset)
 
-        // The energy of an undamped harmonic oscillator [E_tot] is constant. This
-        // is different than for a damped system, where the energy of the system
-        // falls to (E_tot * e^-1) at time [1/gamma]. This energy dissipation is caused
-        // by the damping component.
+        // The energy of an undamped harmonic oscillator [E_tot] is constant.
+        // This is different than for a damped system, where the energy of the
+        // system falls to (E_tot * e^-1) at time [1/gamma]. This energy
+        // dissipation is caused by the damping component.
         //
-        // The damping component is a velocity dependant friction. This is expected
-        // behaviour for physical phenomena such as air drag, viscous drag and even
-        // magnetic drag. The frictional force [F] points in the opposite direction to
-        // the velocity [v] and is given by:
+        // The damping component is a velocity dependant friction. This is
+        // expected behaviour for physical phenomena such as air drag, viscous
+        // drag and even magnetic drag. The frictional force [F] points in the
+        // opposite direction to the velocity [v] and is given by:
         //   F = -b * v
         //
-        // Solving the damping equation for effect on position over time, we get:
+        // Solving the damping equation for effect on position over time, we
+        // get:
         dampingComponent = Math.exp(-(dtCorrected * gamma) / 2)
 
         // The displacement as a function of time is then:
