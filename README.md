@@ -10,16 +10,16 @@ Example: applying the expression to position keyframes
 
 Result with `animationSpeed = 1.2` and `springDamping = 1`:
 
-![Default values](spring-easing/screenshots/default-values.png "Default values")
+![Default values](screenshots/spring-easing/default-values.png "Default values")
 
 Result with `animationSpeed = 1.2` and `springDamping = 3`:
 
-![High damping](spring-easing/screenshots/high-damping.png "High damping")
+![High damping](screenshots/spring-easing/high-damping.png "High damping")
 
 Result with `animationSpeed = 1.2` and `springDamping = 0.3`:
 
-![Low damping](spring-easing/screenshots/low-damping.png "Low damping")
+![Low damping](screenshots/spring-easing/low-damping.png "Low damping")
 
 Result with `animationSpeed = 1.2` and `springDamping = 0.3`:
 
-![Low damping low speed](spring-easing/screenshots/low-damping-low-speed.png "Low damping low speed")
+![Low damping low speed](screenshots/spring-easing/low-damping-low-speed.png "Low damping low speed")
