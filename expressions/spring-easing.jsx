@@ -2,7 +2,7 @@
 // https://github.com/epgui/after-effects-utilities
 
 // Default spring properties:
-animationSpeed = 1.2
+animationSpeed = 1
 springDamping = 1
 
 // Nothing to compute unless there's more than one key
@@ -54,12 +54,13 @@ if (numKeys > 1) {
         value
       } else {
 
-        // Without a correction factor, the spring system behaves as if the spring
-        // attractor jumps instantly from value1 to value2. A more natural or
-        // expected behaviour would see the attractor moving from value1 to value2
-        // linearly. We can correct for this in order to "ease in" to the spring
-        // motion.
-        dtCorrected = dt * ( dt/(time2-time1) )
+        // Without a correction factor, the spring system behaves as if the
+        // spring attractor jumps instantly from value1 to value2. A more
+        // natural or expected behaviour would see the attractor moving from
+        // value1 to value2 linearly. We can correct for this in order to "ease
+        // in" to the spring motion using a correction factor which borrows from
+        // the Michaelis-Menten enzyme kinetics equation.
+        dtCorrected = dt * (dt/((time2-time1)+dt))
 
         // Now for the physics. For more detailed information see:
         // http://people.physics.tamu.edu/agnolet/Teaching/Phys_221/MathematicaWebPages/4_DampedHarmonicOscillator.pdf
