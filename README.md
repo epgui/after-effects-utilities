@@ -5,8 +5,8 @@ For the moment, this repository only has one useful expression: spring-easing.
 Other implementations of spring dynamics I have found are incredibly inefficient, bringing my new macbook pro down to its knees. This implements the analytic solution to the energy equations of damped harmonic oscillators, solved for position over time instead of requiring computationally inefficient recursion. For more information about the relevant physics and the analytic solution, see [this course outline](http://people.physics.tamu.edu/agnolet/Teaching/Phys_221/MathematicaWebPages/4_DampedHarmonicOscillator.pdf).
 
 ### Known issues
-* The graph sometimes appears non-differentiable at times corresponding to keyframes. This does not appear to affect the smoothness of the animation in practice, and I am not sure if this is a real computational error or if it is simply a display error.
 * When the oscillations carry over past the next value change (see example below with `animationSpeed = 0.5` and `springDamping = 0.3`), the value is reset. I believe it would be possible to fix this fairly easily.
+* The minified version doesn't work.
 
 ### Instructions
 

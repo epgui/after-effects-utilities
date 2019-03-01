@@ -50,7 +50,7 @@ if (numKeys > 1) {
       // Here we define [dt] as the x-axis with origin at time1
       dt = time - time1
 
-      if (dt/period > (frequency)/(springDamping * animationSpeed)) {
+      if (dt > 2/0.35 * Math.PI * period * qFactor) {
         value
       } else {
 
@@ -59,7 +59,7 @@ if (numKeys > 1) {
         // expected behaviour would see the attractor moving from value1 to value2
         // linearly. We can correct for this in order to "ease in" to the spring
         // motion.
-        dtCorrected = dt * (overshoot ? 1 : dt/(time2-time1) )
+        dtCorrected = dt * ( dt/(time2-time1) )
 
         // Now for the physics. For more detailed information see:
         // http://people.physics.tamu.edu/agnolet/Teaching/Phys_221/MathematicaWebPages/4_DampedHarmonicOscillator.pdf
