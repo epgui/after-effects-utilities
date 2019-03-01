@@ -29,7 +29,7 @@ if (numKeys > 1) {
         time1 = key(i-1).time
         time2 = key(i).time
         value1 = valueAtTime(time1)
-        value2 = valueAtTime(time2)
+        value2 = value
       } else {
         overshoot = false
       }
@@ -50,21 +50,17 @@ if (numKeys > 1) {
       // Here we define [dt] as the x-axis with origin at time1
       dt = time - time1
 
-      // Without a correction factor, the spring system behaves as if the spring
-      // attractor jumps instantly from value1 to value2. A more natural or
-      // expected behaviour would see the attractor moving from value1 to value2
-      // linearly. We can correct for this in order to "ease in" to the spring
-      // motion.
-      dtCorrected = dt * (overshoot ? 1 : dt/(time2-time1) )
-
-      // We don't need to calculate forever: after a while, the oscillator
-      // approximates the value of the attractor and we can just return this.
-      // This makes the script much more efficient, especially if other effects
-      // such as "Directional blur" are tracking the velocity and angle of the
-      // computed motion.
-      if (dt > (2*period/qFactor)) {
+      if (dt/period > (frequency)/(springDamping * animationSpeed)) {
         value
       } else {
+
+        // Without a correction factor, the spring system behaves as if the spring
+        // attractor jumps instantly from value1 to value2. A more natural or
+        // expected behaviour would see the attractor moving from value1 to value2
+        // linearly. We can correct for this in order to "ease in" to the spring
+        // motion.
+        dtCorrected = dt * (overshoot ? 1 : dt/(time2-time1) )
+
         // Now for the physics. For more detailed information see:
         // http://people.physics.tamu.edu/agnolet/Teaching/Phys_221/MathematicaWebPages/4_DampedHarmonicOscillator.pdf
         //
@@ -117,9 +113,8 @@ if (numKeys > 1) {
 
         // The displacement as a function of time is then:
         displacement = (dampingComponent * forceComponent) - (amplitude)
-
-        // And the position of our object at any time follows:
-        value1 + displacement
+        currentPosition = value1 + displacement
+        currentPosition
       }
     }
   }
